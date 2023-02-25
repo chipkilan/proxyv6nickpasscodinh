@@ -63,7 +63,7 @@ upload_proxy() {
 }
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "usr$(random)/pass$(random)/$IP4/$port/$(gen64 $IP6)"
+        echo "cohuong/koduocscan/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
@@ -96,7 +96,7 @@ echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 echo "How many proxy do you want to create? Example 500"
 read COUNT
 
-FIRST_PORT=10000
+FIRST_PORT=53000
 LAST_PORT=$(($FIRST_PORT + $COUNT))
 
 gen_data >$WORKDIR/data.txt
